@@ -5,7 +5,7 @@
               <profile :display='display' />
          </div>
          <div class="heading">
-             <h3>Personal Profile</h3>
+             <h3>Personal Profile...</h3>
              <p>Basic info, like your name and photo</p>
          </div>
          <div class="profile-cont">
@@ -62,10 +62,10 @@ export default {
         const self=this;
         axios.get('http://localhost:3000/user',{withCredentials: true,}).then((response)=>{
             if(!response.data.isLoggedIn){
-                console.log(response);
+               
                 router.push('/login');
             }else{
-                 console.log(response.data.user)
+                
                  self.user=response.data.user;
             }
         })

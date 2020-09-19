@@ -45,9 +45,11 @@ export default {
         login(){
             const self=this;
             axios.post('http://localhost:3000/auth/login',self.user,{withCredentials: true,}).then((response)=>{
-                  if(!response.data.loggedIn){
+                  if(!response.data.loggedIn){ 
                      self.error=response.data.message;
+                      console.log(response) 
                   }else{
+                     
                      router.push('/')
                   }
             })
